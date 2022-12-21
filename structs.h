@@ -1,9 +1,22 @@
 #include <vector>
 using namespace std;
-
-
+#include <string>
+#include <array>
 struct bird{
+public:
+bird(){
+ sethp();
+
+}
+void sethp(){
+ for(int i=1;i<11;i++){
+health.push_back(i);
+ }
+}
+
+private:
 vector <int> health;
+char playermodel;
 
 
 
@@ -11,8 +24,14 @@ vector <int> health;
 };
 
 struct pipe{
-// pipes will have varying length, height, and girth.
+ public:
+pipe(){
 
 
+}
+ private:
+char pipemodel;
+// height should be pseudorandom within range of mod column height
+unsigned int height;
 
 };
