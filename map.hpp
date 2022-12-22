@@ -1,7 +1,7 @@
-#ifndef map
-#define map
+#pragma once
 #include "structs.h"
 #include <iostream>
+#include <vector>
 class layout {
 public:
   layout(const int &rows, const int &columns, bird *playerptr, string pipe) {
@@ -13,22 +13,25 @@ public:
     buildmap();
   }
 
+  void buildmap() {
+   vector<char> temp;
+for(int i=0;i<rows;i++){
+temp.push_back('s');
+}
+for(int y=0;y<cols;y++){
+ grid.push_back(temp);
+}
+
+  }
   void refresh() {
     // sets the map state whenever called. should involve pseudo-random terrain
     // and pipe generation. pipe generation will generate mod columnheight-3
-    for(int i=0;i<rows;i++){
-     for(int y=0;y<cols;y++){
-      cout << grid[i][y];
-     }
-    }
+  for(int i=0;i<grid.size();i++){
+   for(int y=0;y<grid[i].size();y++){
+    cout << grid[i][y];
+   }
   }
-  void buildmap() {
-    this->grid=new string[rows];
-    for(int i=0;i<rows;i++){
-     for(int y=0;y<cols;y++){
-    grid[i][y]='s';
-     }
-    }
+  cout << endl;
   }
 
 private:
@@ -38,6 +41,5 @@ private:
   unsigned int rows;
   int cols;
   string obstacle;
-  string *grid;
+  vector<vector<char> > grid;
 };
-#endif
