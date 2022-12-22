@@ -40,7 +40,7 @@ int main() {
   }
  //pipe init
 //player class initialized, now build map and send first output
-layout grid(12,13,bptr,"🚏");
+layout grid(20,50,bptr,"🚏");
 grid.refresh();
 
 
