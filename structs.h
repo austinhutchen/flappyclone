@@ -1,8 +1,8 @@
 #include <vector>
-using namespace std;
 #include <array>
 #include <ctime>
 #include <string>
+using namespace std;
 struct bird {
 public:
   bird(char &playermodel) {
@@ -19,18 +19,23 @@ public:
 private:
   vector<int> health;
   char playermodel;
+  // flappy bird stays in the same column while map regens around it
+  // this only changes the row
+  int height;
 };
 
 struct pipe {
 public:
-  pipe(int rownum, int colheight, char model) {
+// constructor to init private members
+  pipe(int &rownum, int &colheight, char &model) {
+   // height NEEDS to be greater than or equal to 5
     // init default heights
     // gives pipes their height
     heightgen(colheight);
     this->pipemodel = model;
   }
 
-  void heightgen(int &colheight) { height = rand() % colheight; }
+  void heightgen(int &colheight) { this->height = rand() % (colheight-3); }
 
 private:
   char pipemodel;
