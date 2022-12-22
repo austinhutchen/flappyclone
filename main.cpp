@@ -10,7 +10,7 @@ int main() {
   string characters[4] = {"", "🦅", "🦇", "🦆"};
   cout << "CHOOSE YOUR CHARACTER:" << endl;
   for (int i = 1; i < 4; i++) {
-    cout << i << ")." << characters[i];
+    cout << "("<<i << "). " << characters[i];
   }
   cout << endl;
   cin >> choice;
@@ -18,16 +18,19 @@ int main() {
   switch (choice) {
   case 1: {
     bird b = bird(characters[1]);
+    cout << b.getplayer() << " Chosen.." << endl;
     break;
   }
 
   case 2: {
-  bird b = bird(characters[2]);
+    bird b = bird(characters[2]);
+    cout << b.getplayer() << " Chosen.." << endl;
     break;
   }
 
   case 3: {
-  bird b = bird(characters[3]);
+    bird b = bird(characters[3]);
+    cout << b.getplayer() << " Chosen.." << endl;
     break;
   }
   default: {

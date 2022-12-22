@@ -15,7 +15,9 @@ public:
       health.push_back(i);
     }
   }
-
+ string getplayer(){
+  return this->playermodel;
+ }
 private:
   vector<int> health;
   string playermodel;
