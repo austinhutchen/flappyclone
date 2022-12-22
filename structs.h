@@ -5,7 +5,7 @@
 using namespace std;
 struct bird {
 public:
-  bird(char &playermodel) {
+  bird(string &playermodel) {
     sethp();
     this->playermodel = playermodel;
     srand(time(NULL));
@@ -18,7 +18,7 @@ public:
 
 private:
   vector<int> health;
-  char playermodel;
+  string playermodel;
   // flappy bird stays in the same column while map regens around it
   // this only changes the row
   int height;
