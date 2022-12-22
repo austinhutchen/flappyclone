@@ -6,6 +6,8 @@ int main() {
   int level;
   // the below variable is re-used throughout program for inputs requiring integers
   unsigned int choice;
+  int rows=50;
+  int cols=50;
   string characters[4] = {"", "🦅", "🦉", "🦆"};
   cout << "CHOOSE YOUR CHARACTER:" << endl;
   for (int i = 1; i < 4; i++) {
@@ -40,7 +42,7 @@ int main() {
   }
  //pipe init
 //player class initialized, now build map and send first output
-layout grid(20,50,bptr,"🚏");
+layout grid(rows,cols,bptr,"🚏");
 grid.refresh();
 
 

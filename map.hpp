@@ -14,9 +14,9 @@ public:
   }
 
   void buildmap() {
-   vector<char> temp;
+   vector<string> temp;
 for(int i=0;i<rows;i++){
-temp.push_back('s');
+temp.push_back("🚏");
 }
 for(int y=0;y<cols;y++){
  grid.push_back(temp);
@@ -41,5 +41,5 @@ private:
   unsigned int rows;
   int cols;
   string obstacle;
-  vector<vector<char> > grid;
+  vector<vector<string> > grid;
 };
