@@ -26,21 +26,3 @@ private:
   int height;
 };
 
-struct pipe {
-public:
-// constructor to init private members
-  pipe(int &rownum, int &colheight, char &model) {
-   // height NEEDS to be greater than or equal to 5
-    // init default heights
-    // gives pipes their height
-    heightgen(colheight);
-    this->pipemodel = model;
-  }
-
-  void heightgen(int &colheight) { this->height = rand() % (colheight-3); }
-
-private:
-  char pipemodel;
-  // height should be pseudorandom within range of mod column height
-  unsigned int height;
-};

@@ -1,4 +1,4 @@
-#include "structs.h"
+#include "map.hpp"
 #include <iostream>
 
 int main() {
@@ -13,19 +13,23 @@ int main() {
   }
   cout << endl;
   cin >> choice;
+  bird *bptr=nullptr;
   switch (choice) {
   case 1: {
     bird b = bird(characters[1]);
+    bptr=&b;
     cout << b.getplayer() << " Chosen.." << endl;
     break;
   }
   case 2: {
     bird b = bird(characters[2]);
+     bptr=&b;
     cout << b.getplayer() << " Chosen.." << endl;
     break;
   }
   case 3: {
     bird b = bird(characters[3]);
+    bptr=&b;
     cout << b.getplayer() << " Chosen.." << endl;
     break;
   }
@@ -34,10 +38,10 @@ int main() {
     return main();
   }
   }
+ //pipe init
 //player class initialized, now build map and send first output
-
-
-
+layout grid(12,13,bptr,"🚏");
+grid.refresh();
 
 
 }
