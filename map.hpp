@@ -28,7 +28,12 @@ for(int y=0;y<cols;y++){
     // and pipe generation. pipe generation will generate mod columnheight-3
   for(int i=0;i<grid.size();i++){
    for(int y=0;y<grid[i].size();y++){
-    cout << grid[i][y];
+    if(i==player->getx()&&y==player->gety()){
+     cout << player->getplayer();
+    }
+    else{
+        cout << grid[i][y];
+    }
    }
   }
   cout << endl;
