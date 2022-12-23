@@ -1,11 +1,15 @@
 #include "map.hpp"
 #include <iostream>
 
-void display(bird *bptr){
+bool display(bird *bptr){
  char choice;
 cout << "---Enter your move choice WASD---" <<endl;
 cin >> choice;
+if(choice!='E'){
 bptr->mov(choice);
+return true;
+}
+return false;
 }
 int main() {
   cout << "=========FLAPPY BIRD V.1 ========" << endl;
@@ -49,9 +53,8 @@ int main() {
  //pipe init
 //player class initialized, now build map and send first output
 layout grid(rows,cols,bptr,"🚏");
-while(true){
+while( display(bptr)){
  grid.refresh();
- display(bptr);
 }
 
 

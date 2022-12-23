@@ -1,6 +1,7 @@
 #include <ctime>
 #include <string>
 #include <vector>
+#include <iostream>
 using namespace std;
 struct bird {
 public:
@@ -23,17 +24,23 @@ public:
     // figure out how to properly code this movement
     switch (choice) {
     case 'w': {
-      playerx++;
+      playerx--;
+      break;
     }
     case 'a': {
-      playery++;
+      playery--;
+      break;
     }
     case 's': {
-      playerx--;
+      playerx++;
+      break;
     }
     case 'd': {
-      playery--;
+      playery++;
+      break;
     }
+    default: std::cout << "Invalid choice.";
+    return;
     }
   }
 
