@@ -1,6 +1,6 @@
-#include <vector>
 #include <ctime>
 #include <string>
+#include <vector>
 using namespace std;
 struct bird {
 public:
@@ -8,23 +8,35 @@ public:
     sethp();
     this->playermodel = playermodel;
     srand(time(NULL));
-    playerx=0;
-    playery=0;
+    playerx = 0;
+    playery = 0;
   }
   void sethp() {
     for (int i = 1; i < 11; i++) {
       health.push_back(i);
     }
   }
- string getplayer(){
-  return this->playermodel;
- }
- int getx(){
- return playerx;
- }
- int gety(){
-  return playery;
- }
+  string getplayer() { return this->playermodel; }
+  int getx() { return playerx; }
+  int gety() { return playery; }
+  void mov(char choice) {
+    // figure out how to properly code this movement
+    switch (choice) {
+    case 'w': {
+      playerx++;
+    }
+    case 'a': {
+      playery++;
+    }
+    case 's': {
+      playerx--;
+    }
+    case 'd': {
+      playery--;
+    }
+    }
+  }
+
 private:
   vector<int> health;
   string playermodel;
@@ -34,4 +46,3 @@ private:
   // this only changes the row
   int height;
 };
-
