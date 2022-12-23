@@ -53,6 +53,9 @@ int main() {
  //pipe init
 //player class initialized, now build map and send first output
 layout grid(rows,cols,bptr,"🚏");
+// init call
+ grid.refresh();
+ // main loop while user doesnt want to exit
 while( display(bptr)){
  grid.refresh();
 }
